@@ -4,7 +4,12 @@
 int rgbToLaunchpadColor(int r, int g, int b) {
     int closestIndex = 0;
     double dist = 999999.9;
-
+    
+    // The list works with colors between 0 and 63
+    r /= (255 / 64);
+    g /= (255 / 64);
+    b /= (255 / 64);
+    
     int list[128][3] = {
         {0, 0, 0},
         {7, 7, 7},
